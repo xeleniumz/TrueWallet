@@ -67,7 +67,7 @@ const Wallet = {
     },
 
     async wallet_request(headers, uri, data) {
-        if (typeof data === 'undefined') {
+        if (!data) {
             var options = {
                 header: headers,
                 method: 'POST',
