@@ -63,7 +63,7 @@ const Wallet = {
         let headers = {
             "Host": "api-ewm.truemoney.com"
         }
-        return wallet_request($url, true, $header);
+        return await wallet_request($url, true, $header);
     },
 
     async wallet_request(headers, uri, data) {
