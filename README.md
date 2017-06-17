@@ -13,7 +13,7 @@ visit this repository for php version https://github.com/exzajung/class.truewall
 # How to use
 - install require package 
 - import this library to your controller
-- send request data with post to endpoint in this lib which you want this lib and Enjoy !!
+- send request data with post to endpoint and Enjoy !!
 
 
 # Debugging
