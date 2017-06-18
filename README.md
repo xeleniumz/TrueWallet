@@ -7,8 +7,9 @@ visit this repository for php version https://github.com/exzajung/class.truewall
 # System requirement 
 - babel transpiler
 - node.js version 7.10 or higher
-- request-promise-native Simplified HTTP request client for node.js package
-- moment time management time management for node.js package
+- request-promise-native https://github.com/request/request-promise-native
+- sha1 package https://www.npmjs.com/package/sha1
+- moment time management https://www.npmjs.com/package/moment
 
 # How to use
 - install require package 
