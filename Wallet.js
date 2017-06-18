@@ -7,6 +7,7 @@
 
 import requestPromise from 'request-promise-native'
 import moment from 'moment'
+import sha1 from 'sha1'
 
 
 const api_signin = "https://api-ewm.truemoney.com/api/v1/signin?&";
@@ -28,7 +29,7 @@ const Wallet = {
     async getToken(req, res) {
         let data = {
             "username": req.body.username,
-            "password": req.body.password,
+            "password": sha1(req.body.password),
             "type": login_type,
             "deviceToken": deviceToken,
             "mobileTracking": mobileTracking,
@@ -55,7 +56,7 @@ const Wallet = {
         let headers = {
             "Host": "api-ewm.truemoney.com"
         }
-        return await wallet_request(headers, uri)
+        return await wallet_request(headers, uri,false)
     },
 
     async Topup(req, res, token) {
