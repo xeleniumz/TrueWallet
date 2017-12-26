@@ -27,32 +27,24 @@ const mobileTracking = "dJyFzn\/GIq7lrjv2RCsZbphpp0L\/W2+PsOTtOpg352mgWrt4XAEAAA
 const Wallet = {
 
     async getToken(req, res) {
+
         let data = {
             "username": req.body.username,
             "password": sha1(req.body.password),
             "type": login_type,
             "deviceToken": deviceToken,
             "mobileTracking": mobileTracking,
-        }
-
-        let uri = api_signin + 'device_os=' + device_os + '&device_id=' +
-            +device_id + '&device_type=' + device_type + '&device_version=' + device_version + '&app_name=' + app_name + '&app_version=' + app_version
-
+        };
+        let uri = `${api_signin}device_os=${device_os}&device_id=${device_id}&device_type=${device_type}&device_version=${device_version}&app_name=${app_name}&app_version=${app_version}`;
         let headers = {
             "Host": "api-ewm.truemoney.com",
             "Content-Type": "application/json"
-        }
-
-
-        return await wallet_request(headers, uri, data)
-
-
-
+        };
+        return await wallet_request(headers, uri, data);
     },
 
     async Profile(req, res, token) {
-        let uri = api_profile + token + '?&device_os=android&device_id=' + device_id + '&device_type=' + device_type + '&device_version=' +
-            device_version + '&app_name=' + app_name + '&app_version=' + app_version
+        let uri = `${api_profile}${token}?&device_os=android&device_id=${device_id}&device_type=${device_type}&device_version=${device_version}&app_name=${app_name}&app_version=${app_version}`;
         let headers = {
             "Host": "api-ewm.truemoney.com"
         }
@@ -60,10 +52,11 @@ const Wallet = {
     },
 
     async Topup(req, res, token) {
-        let uri = api_topup + moment().tz("Asia/Bangkok").format('YYYY-MM-DD HH:mm:ss') + "/" + token + "/cashcard/" + req.body.cashcard;
+        let timeStamp = moment().tz("Asia/Bangkok").format('YYYY-MM-DD HH:mm:ss');
+        let uri = `${api_topup}${timeStamp}/${token}/cashcard/${req.body.cashcard}`;
         let headers = {
             "Host": "api-ewm.truemoney.com"
-        }
+        };
         return await wallet_request(headers,uri,false);
     },
 
@@ -74,7 +67,7 @@ const Wallet = {
                 method: 'GET',
                 uri: uri,
                 json: true
-            }
+            };
         } else {
             var options = {
                 header: headers,
@@ -82,7 +75,7 @@ const Wallet = {
                 uri: uri,
                 body: data,
                 json: true
-            }
+            };
         }
 
 
