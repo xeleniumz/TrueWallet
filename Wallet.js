@@ -26,7 +26,7 @@ const mobileTracking = "dJyFzn\/GIq7lrjv2RCsZbphpp0L\/W2+PsOTtOpg352mgWrt4XAEAAA
 
 const Wallet = {
 
-    async getToken(req, res) {
+     getToken: async (req, res) {
 
         let data = {
             "username": req.body.username,
@@ -43,7 +43,7 @@ const Wallet = {
         return await wallet_request(headers, uri, data);
     },
 
-    async Profile(req, res, token) {
+    Profile: async (req, res, token) {
         let uri = `${api_profile}${token}?&device_os=android&device_id=${device_id}&device_type=${device_type}&device_version=${device_version}&app_name=${app_name}&app_version=${app_version}`;
         let headers = {
             "Host": "api-ewm.truemoney.com"
@@ -51,7 +51,7 @@ const Wallet = {
         return await wallet_request(headers, uri,false)
     },
 
-    async Topup(req, res, token) {
+    Topup: async (req, res, token) {
         let timeStamp = moment().tz("Asia/Bangkok").format('YYYY-MM-DD HH:mm:ss');
         let uri = `${api_topup}${timeStamp}/${token}/cashcard/${req.body.cashcard}`;
         let headers = {
@@ -60,7 +60,7 @@ const Wallet = {
         return await wallet_request(headers,uri,false);
     },
 
-    async wallet_request(headers, uri, data) {
+    wallet_request: async (headers, uri, data) {
         if (!data) {
             var options = {
                 header: headers,
