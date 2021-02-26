@@ -14,11 +14,11 @@ const api_signin = "https://api-ewm.truemoney.com/api/v1/signin?&";
 const api_profile = "https://api-ewm.truemoney.com/api/v1/profile/";
 const api_topup = "https://api-ewm.truemoney.com/api/api/v1/topup/mobile/";
 const device_os = "android";
-const device_id = "d520d0d12d0d48cb89394905168c6ed5";
+const device_id = "TrueMoney wallet:3178";
 const device_type = "CPH1611";
 const device_version = "6.0.1";
-const app_name = "wallet";
-const app_version = "2.9.14";
+const app_name = "Wallet";
+const app_version = "5.18.0";
 const deviceToken = "fUUbZJ9nwBk:APA91bHHgBBHhP9rqBEon_BtUNz3rLHQ-sYXnezA10PRSWQTwFpMvC9QiFzh-CqPsbWEd6x409ATC5RVsHAfk_-14cSqVdGzhn8iX2K_DiNHvpYfMMIzvFx_YWpYj5OaEzMyIPh3mgtx";
 const mobileTracking = "dJyFzn\/GIq7lrjv2RCsZbphpp0L\/W2+PsOTtOpg352mgWrt4XAEAAA==";
 
